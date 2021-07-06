@@ -385,9 +385,12 @@ text-decoration: none;
 display: block; */
 }
 .container__cart-table-img{
-height: 150px;
-width: 150px;
-object-fit: cover;
+max-height: 100%;
+max-width: 100%;
+height:auto;
+width:auto;
+object-fit: contain;
+overflow:hidden;
 }
 .contianer__cart-table-btn--shopping{
   text-decoration: none;

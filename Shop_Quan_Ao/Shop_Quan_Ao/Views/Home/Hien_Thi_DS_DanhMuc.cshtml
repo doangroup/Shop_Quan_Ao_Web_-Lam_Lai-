@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Hien_Thi_DS_DanhMuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Shop_Quan_Ao.Models;
+@model List<SanPham>
+
+
+
+<div class="row">
+    <div class="col wide l-3">
+        <h1 class="container__catagories-heading">Sản Phẩm</h1>
+        @Html.Action("DanhSach_DanhMuc_SanPham_2", "Home")
+    </div>
+    <div class="col wide l-9">
+        <div class="container__card-wrap">
+@foreach (SanPham item in Model)
+            {
+            <div class="col wide l-4">
+                <a href="@Url.Action("ChiTietSP", "Home", new { id = @item.MaSP})" class="container__card-wrap--detail">
+
+                    <img src="~/Content/Hinh/@item.HinhAnh" alt="sp" class="container__card-img">
+                    <p class="container__card-heading">@item.TenSP</p>
+                    <p class="container__card-price">@item.DonGia</p>
+                </a>
+                <a href="@Url.Action("Themmathang", "DatHang", new { msp=@item.MaSP})" class="btn container__card-btn">
+                    <p>Mua Hàng</p>
+                </a>
+
+            </div>
+}
+
+        </div>
+    </div>
+</div>

@@ -29,7 +29,7 @@
             <div class="grid wide">
                 <div class="row">
                     <div class="col wide l-2">
-                        <a href="#" class="header__logo-link">
+                        <a href="" class="header__logo-link">
                             <img src="/Content/assets/img/logo.png" alt="logo"
                                  class="header__logo-img">
                         </a>
@@ -37,15 +37,17 @@
                     <div class="col wide l-8">
                         <nav>
                             <ul class="header__menu-list">
-                                <li class="header__menu-item"><a href="#" class="header__menu-link">TRANG CHỦ</a></li>
+                                <li class="header__menu-item"><a href="@Url.Action("Index","Home")" class="header__menu-link">TRANG CHỦ</a></li>
                                 <li class="header__menu-item">
                                     <a href="#" class="header__menu-link">SẢN PHẨM</a>
                                     <nav class="subnav">
-                                        <ul class="header__product-list">
+                                        @*<ul class="header__product-list">
                                             <li class="header__product-item"><a href="Aosomi.html" class="header__product-link">Áo sơ mi</a></li>
                                             <li class="header__product-item"><a href="#" class="header__product-link">Áo thun</a></li>
                                             <li class="header__product-item"><a href="#" class="header__product-link">Quần Jean</a></li>
-                                        </ul>
+                                 
+                                        </ul>*@
+                                        @Html.Action("DanhSach_DanhMuc_SanPham", "Home")
                                     </nav>
                                 </li>
                                 <li class="header__menu-item"><a href="#" class="header__menu-link">VỀ CHÚNG TÔI</a></li>
@@ -66,7 +68,7 @@
                                     </form>
                                 </li>
                                 <li class="header__selector-item">
-                                    <a href="Account.html" class="header__selector-link">
+                                    <a href="@Url.Action("DangNhap","KhachHang")" class="header__selector-link">
                                         <i class="header__selector-icon fas fa-user"></i>
                                     </a>
                                     <ul class="header__user-list">

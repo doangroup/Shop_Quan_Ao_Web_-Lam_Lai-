@@ -1,0 +1,15 @@
+﻿@using Shop_Quan_Ao.Models;
+@model List<DanhMuc>
+
+
+<ul class="header__product-list">
+    @foreach (DanhMuc item in @Model)
+{
+
+    <li class="header__product-item">
+      
+            @Html.ActionLink(@item.TenDM, "Hien_Thi_DS_DanhMuc", "Home", new { id = item.MaDM }, new { @class = "header__product-link" })
+   
+    </li>
+}
+</ul>

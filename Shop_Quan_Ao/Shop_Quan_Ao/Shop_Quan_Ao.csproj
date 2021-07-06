@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -127,9 +128,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\DataClasses2.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses2.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\SanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2157,6 +2167,109 @@
     <Content Include="Content\assets\img\slider_2.jpg" />
     <Content Include="Content\assets\img\slider_3.jpg" />
     <Content Include="Content\assets\img\sp\sp1.jpg" />
+    <Content Include="Content\Hinh\cap1.jpg" />
+    <Content Include="Content\Hinh\cap10.jpg" />
+    <Content Include="Content\Hinh\cap11.jpg" />
+    <Content Include="Content\Hinh\cap12.jpg" />
+    <Content Include="Content\Hinh\cap13.jpg" />
+    <Content Include="Content\Hinh\cap14.jpg" />
+    <Content Include="Content\Hinh\cap15.jpg" />
+    <Content Include="Content\Hinh\cap16.jpg" />
+    <Content Include="Content\Hinh\cap17.jpg" />
+    <Content Include="Content\Hinh\cap18.jpg" />
+    <Content Include="Content\Hinh\cap2.jpg" />
+    <Content Include="Content\Hinh\cap3.jpg" />
+    <Content Include="Content\Hinh\cap4.jpg" />
+    <Content Include="Content\Hinh\cap5.jpg" />
+    <Content Include="Content\Hinh\cap6.jpg" />
+    <Content Include="Content\Hinh\cap7.jpg" />
+    <Content Include="Content\Hinh\cap8.jpg" />
+    <Content Include="Content\Hinh\cap9.jpg" />
+    <Content Include="Content\Hinh\jean1.jpg" />
+    <Content Include="Content\Hinh\jean10.jpg" />
+    <Content Include="Content\Hinh\jean11.jpg" />
+    <Content Include="Content\Hinh\jean12.jpg" />
+    <Content Include="Content\Hinh\jean13.jpg" />
+    <Content Include="Content\Hinh\jean14.jpg" />
+    <Content Include="Content\Hinh\jean15.jpg" />
+    <Content Include="Content\Hinh\jean16.jpg" />
+    <Content Include="Content\Hinh\jean17.jpg" />
+    <Content Include="Content\Hinh\jean18.jpg" />
+    <Content Include="Content\Hinh\jean19.jpg" />
+    <Content Include="Content\Hinh\jean2.jpg" />
+    <Content Include="Content\Hinh\jean3.jpg" />
+    <Content Include="Content\Hinh\jean4.jpg" />
+    <Content Include="Content\Hinh\jean5.jpg" />
+    <Content Include="Content\Hinh\jean6.jpg" />
+    <Content Include="Content\Hinh\jean7.jpg" />
+    <Content Include="Content\Hinh\jean8.jpg" />
+    <Content Include="Content\Hinh\jean9.jpg" />
+    <Content Include="Content\Hinh\jogger1.jpg" />
+    <Content Include="Content\Hinh\jogger2.jpg" />
+    <Content Include="Content\Hinh\jogger3.jpg" />
+    <Content Include="Content\Hinh\jogger4.jpg" />
+    <Content Include="Content\Hinh\jogger5.jpg" />
+    <Content Include="Content\Hinh\jogger6.jpg" />
+    <Content Include="Content\Hinh\jogger7.jpg" />
+    <Content Include="Content\Hinh\jogger8.jpg" />
+    <Content Include="Content\Hinh\jogger9.jpg" />
+    <Content Include="Content\Hinh\khoac1.jpg" />
+    <Content Include="Content\Hinh\khoac2.jpg" />
+    <Content Include="Content\Hinh\somi1.jpg" />
+    <Content Include="Content\Hinh\somi10.jpg" />
+    <Content Include="Content\Hinh\somi11.jpg" />
+    <Content Include="Content\Hinh\somi12.jpg" />
+    <Content Include="Content\Hinh\somi13.jpg" />
+    <Content Include="Content\Hinh\somi14.jpg" />
+    <Content Include="Content\Hinh\somi15.jpg" />
+    <Content Include="Content\Hinh\somi16.jpg" />
+    <Content Include="Content\Hinh\somi17.jpg" />
+    <Content Include="Content\Hinh\somi18.jpg" />
+    <Content Include="Content\Hinh\somi19.jpg" />
+    <Content Include="Content\Hinh\somi2.jpg" />
+    <Content Include="Content\Hinh\somi20.jpg" />
+    <Content Include="Content\Hinh\somi21.jpg" />
+    <Content Include="Content\Hinh\somi22.jpg" />
+    <Content Include="Content\Hinh\somi23.jpg" />
+    <Content Include="Content\Hinh\somi24.jpg" />
+    <Content Include="Content\Hinh\somi25.jpg" />
+    <Content Include="Content\Hinh\somi26.jpg" />
+    <Content Include="Content\Hinh\somi3.jpg" />
+    <Content Include="Content\Hinh\somi4.jpg" />
+    <Content Include="Content\Hinh\somi5.jpg" />
+    <Content Include="Content\Hinh\somi6.jpg" />
+    <Content Include="Content\Hinh\somi7.jpg" />
+    <Content Include="Content\Hinh\somi8.jpg" />
+    <Content Include="Content\Hinh\somi9.jpg" />
+    <Content Include="Content\Hinh\tay1.jpg" />
+    <Content Include="Content\Hinh\tay10.jpg" />
+    <Content Include="Content\Hinh\tay2.jpg" />
+    <Content Include="Content\Hinh\tay3.jpg" />
+    <Content Include="Content\Hinh\tay4.jpg" />
+    <Content Include="Content\Hinh\tay5.jpg" />
+    <Content Include="Content\Hinh\tay6.jpg" />
+    <Content Include="Content\Hinh\tay7.png" />
+    <Content Include="Content\Hinh\tay8.jpg" />
+    <Content Include="Content\Hinh\tay9.jpg" />
+    <Content Include="Content\Hinh\thun1.jpg" />
+    <Content Include="Content\Hinh\thun10.jpg" />
+    <Content Include="Content\Hinh\thun11.jpg" />
+    <Content Include="Content\Hinh\thun12.jpg" />
+    <Content Include="Content\Hinh\thun13.jpg" />
+    <Content Include="Content\Hinh\thun14.jpg" />
+    <Content Include="Content\Hinh\thun15.jpg" />
+    <Content Include="Content\Hinh\thun16.jpg" />
+    <Content Include="Content\Hinh\thun17.jpg" />
+    <Content Include="Content\Hinh\thun18.jpg" />
+    <Content Include="Content\Hinh\thun19.png" />
+    <Content Include="Content\Hinh\thun2.jpg" />
+    <Content Include="Content\Hinh\thun3.jpg" />
+    <Content Include="Content\Hinh\thun4.jpg" />
+    <Content Include="Content\Hinh\thun5.jpg" />
+    <Content Include="Content\Hinh\thun6.jpg" />
+    <Content Include="Content\Hinh\thun7.jpg" />
+    <Content Include="Content\Hinh\thun8.jpg" />
+    <Content Include="Content\Hinh\thun9.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -2274,6 +2387,11 @@
     <Content Include="Content\assets\font\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\assets\font\themify-icons\fonts\themify.woff" />
     <Content Include="Content\assets\font\themify-icons\Themify IconFonts 5-23-2014.json" />
+    <Content Include="Models\DataClasses2.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses2.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -2302,14 +2420,25 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\KhachHang\DangNhap.cshtml" />
+    <Content Include="Views\Home\DanhSach_DanhMuc_SanPham.cshtml" />
+    <Content Include="Views\Home\Hien_Thi_DS_DanhMuc.cshtml" />
+    <Content Include="Views\Home\DanhSach_DanhMuc_SanPham_2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\assets\img\notifycation\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DataClasses2.dbml.layout">
+      <DependentUpon>DataClasses2.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
