@@ -35,6 +35,7 @@ namespace Shop_Quan_Ao.Controllers
             {
 
                 return View();
+                
 
             }
             Session["kh"] = khach;

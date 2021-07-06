@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DatHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2424,6 +2425,9 @@
     <Content Include="Views\Home\DanhSach_DanhMuc_SanPham.cshtml" />
     <Content Include="Views\Home\Hien_Thi_DS_DanhMuc.cshtml" />
     <Content Include="Views\Home\DanhSach_DanhMuc_SanPham_2.cshtml" />
+    <Content Include="Views\KhachHang\KhoiTaoKhach.cshtml" />
+    <Content Include="Views\DatHang\XemGioHang.cshtml" />
+    <Content Include="Views\DatHang\KhoiTaoLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

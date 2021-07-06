@@ -22,7 +22,7 @@
 
                     <img src="~/Content/Hinh/@item.HinhAnh" alt="sp" class="container__card-img">
                     <p class="container__card-heading">@item.TenSP</p>
-                    <p class="container__card-price">@item.DonGia</p>
+                    <p class="container__card-price">@String.Format("{0:0,000}", @item.DonGia) đ</p>
                 </a>
                 <a href="@Url.Action("Themmathang", "DatHang", new { msp=@item.MaSP})" class="btn container__card-btn">
                     <p>Mua Hàng</p>

@@ -9,16 +9,16 @@
             <div class="contianer__account-wrap">
 
                 <p class="container__account-heading">ĐĂNG NHẬP</p>
-                <form action="#" class="container__account-sign-up-form-control">
+                <form action="#" class="container__account-sign-up-form-control" method="post">
                     <div class="row">
                         <div class="col wide l-12">
-                            <input type="text" required placeholder="Số Điện Thoại"
+                            <input type="text" name="Username" required placeholder="Số Điện Thoại"
                                    class="container__account-form">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col wide l-12">
-                            <input type="password" required placeholder="Mật Khẩu"
+                            <input type="password" name="Password" required placeholder="Mật Khẩu"
                                    class="container__account-form">
                         </div>
                     </div>
@@ -35,28 +35,28 @@
         </div>
         <div class="col wide l-6">
             <p class="container__account-heading">ĐĂNG KÝ THÀNH VIÊN MỚI</p>
-            <form action="#" class="container__account-sign-up-form-control">
+            <form action="/KhachHang/DangKy" method="post" class="container__account-sign-up-form-control">
                 <div class="row">
                     <div class="col wide l-12">
-                        <input type="text" required placeholder="Họ Và Tên"
+                        <input type="text" name="Name" required placeholder="Họ Và Tên"
                                class="container__account-form">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col wide l-12">
-                        <input type="text" required placeholder="Địa Chỉ"
+                        <input type="text" name="DiaChi" required placeholder="Địa Chỉ"
                                class="container__account-form">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col wide l-12">
-                        <input type="text" required placeholder="Số Điện Thoại"
+                        <input type="text" name="Phone" required placeholder="Số Điện Thoại"
                                class="container__account-form">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col wide l-12">
-                        <input type="password" required placeholder="Mật Khẩu"
+                        <input type="password" name="Password" required placeholder="Mật Khẩu"
                                class="container__account-form">
                     </div>
                 </div>

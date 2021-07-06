@@ -72,15 +72,17 @@
                                         <i class="header__selector-icon fas fa-user"></i>
                                     </a>
                                     <ul class="header__user-list">
-                                        <li class="header__user-item"><a href="#" class="header__user-link">Đăng nhập</a></li>
-                                        <li class="header__user-item"><a href="#" class="header__user-link">Đăng ký</a></li>
+                                        @*<li class="header__user-item"><a href="#" class="header__user-link">Đăng nhập</a></li>
+                                        <li class="header__user-item"><a href="#" class="header__user-link">Đăng ký</a></li>*@
+
+                                        <li class="header__user-item"><a href="#" class="header__user-link">@Html.Action("KhoiTaoKhach", "KhachHang")</a></li>
                                     </ul>
                                 </li>
                                 <li class="header__selector-item">
-                                    <a href="GioHang.html" class="header__selector-link">
+                                    <a href="@Url.Action("XemGioHang", "DatHang")" class="header__selector-link">
                                         <i class="header__selector-icon fas fa-shopping-bag">
                                         </i>
-                                        <span class="header__selector-number">0</span>
+                                        <span class="header__selector-number">@Html.Action("KhoiTaoLayout", "DatHang") </span>
                                     </a>
 
                                 </li>

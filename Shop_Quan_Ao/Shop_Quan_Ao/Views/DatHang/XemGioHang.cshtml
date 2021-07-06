@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Shop_Quan_Ao.Models;
+@model GioHang
+<p class="container__cart-heading">Giỏ Hàng</p>
+<div class="row">
+    <div class="col wide l-9">
+        <div class="table-wrap">
+            <table class="contianer__cart-table">
+                <thead>
+                    <tr>
+                        <th class="contianer__cart-table-heading">Sản Phẩm</th>
+                        <th class="contianer__cart-table-heading"></th>
+                        <th class="contianer__cart-table-heading">Số Lượng</th>
+                        <th class="contianer__cart-table-heading">Giá</th>
+                        <th class="contianer__cart-table-heading">Xóa</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+@foreach (CartItem item in Model.dsSp)
+                {
+                    <tr>
+                        <td class="contianer__cart-table-heading--item">
+                            <a href="#"
+                               class="container__cart-table-link">
+                                <img src="~/Content/Hinh/@item.sAnhBia"
+                                     alt="sp" class="container__cart-table-img">
+                            </a>
+                        </td>
+                        <td class="contianer__cart-table-heading--item">@item.sTenSp</td>
+                        <td class="contianer__cart-table-heading--item">@item.iSoLuong</td>
+                        <td class="contianer__cart-table-heading--item">
+                           @String.Format("{0:0,000}", @item.sDonGia) đ</td>
+                        <td class="contianer__cart-table-heading--item">
+                            <a href="@Url.Action("Xoamathang", "DatHang", new { id = @item.iMaSP })"
+                               class="container__cart-table-link--remove">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col wide l-3">
+        <div class="table-wrap">
+            <table class="contianer__cart-table">
+                <thead>
+                    <tr>
+
+                        <th class="contianer__cart-table-heading">Tổng Tiền</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td class="contianer__cart-table-heading--item"> @String.Format("{0:0,000}", @Model.TongThanhTien()) đ</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col wide l-12">
+
+                    <a href="@Url.Action("Đặt Hàng", "XacNhanDonHang", "DatHang")" class="btn contianer__cart-table-btn">
+                        <p>Thanh Toán</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col wide l-4">
+        <a href="#" class="btn contianer__cart-table-btn--shopping">
+            <p>Tiếp Tục Mua Sắm</p>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col wide l-12">
+        <div class="container__contact">
+            <i class="container__contact-icon fas fa-phone-square-alt"></i>
+            <p class="container__contact-heading">Hỗ trợ / Mua hàng: <span>0933 800 190</span></p>
+        </div>
+    </div>
+</div>
+            </div>

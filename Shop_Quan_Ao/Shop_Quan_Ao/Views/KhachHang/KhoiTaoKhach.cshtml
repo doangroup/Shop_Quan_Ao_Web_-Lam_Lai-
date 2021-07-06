@@ -1,0 +1,13 @@
+﻿@using Shop_Quan_Ao.Models;
+@{
+    //KHACHHANG a =ViewBag.khach;
+}
+@model KhachHang
+@if (Model == null)
+{
+    <label>0</label>
+}
+else
+{
+    <label>@Model.TenKH</label>
+}
