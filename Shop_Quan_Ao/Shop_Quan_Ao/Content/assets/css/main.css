@@ -206,7 +206,18 @@ position: relative;
   border-radius: 2px;
   background: url("/Content/assets/img/slider_1.jpg") top center/cover no-repeat;
 }
-
+.container__silder--bottom_3 {
+  margin-top: 8px;
+  padding-top: 39%;
+  object-fit: contain;
+  
+  max-height:280px;
+  max-width:450px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 2px;
+  background: url("/Content/assets/img/no-cart.png") top center/cover no-repeat;
+}
 .container__silder--bottom {
   margin-top: 8px;
   padding-top: 39%;
@@ -361,6 +372,7 @@ height: 600px;
   color: var(--text-color);
   font-size: var(--text-large);
   font-weight: 500;
+  padding-top:64px;
 }
 .contianer__cart-table-heading{
   color: var(--text-color);
@@ -421,6 +433,7 @@ overflow:hidden;
   color: var(--white-color);
   background-color: var(--black-color);
    text-align: center;
+   margin-top:64px;
 }
 .container__catagories-list{
 padding-left: 0;
@@ -444,7 +457,7 @@ display: block;
 .container__card-wrap{
 display: flex;
 flex-wrap: wrap;
-margin-top: 10px;
+margin: 64px 0;
 }
 .container__card-img{
   height: auto;
@@ -492,6 +505,107 @@ margin-bottom: 10px;
 /* San Pham */
 
 
+/* Chi Tiet San Pham */
+.container__detail-img-wrap{
+  margin: 64px 0;
+  text-align: center;
+  
+}
+.container__deatail-img{
+  box-shadow: 0 0 15px #ccc;
+}
+.container__detail-wrap{
+  margin: 64px 0;
+}
+.container__detail-heading{
+  font-size: var(--text-large);
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 400;
+}
+.container__deatail-price{
+  color: red;
+  font-size: var(--text-small);
+  text-align: center;
+  font-weight: 400;
+}
+.container__detail-btn{
+  text-align: center;
+}
+
+.container__detail-btn--size{
+  color: var(--text-color);
+  font-weight: 300;
+  border: 1px solid #ccc;
+  margin: 0 4px;
+}
+.container__detail-btn--size:hover{
+  background-color: #ccc;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+.container__detail-btn--size-active{
+box-shadow: 0 0 3px #000;
+  
+}
+.container__detail-btn-link {
+font-size: var(--text-medium);
+color: var(--text-color);
+font-weight: 300;
+
+}
+.container__detail-btn--Add-to_Cart{
+  border: 1px solid #000;
+  width: 100%;
+  padding: 0;
+  margin-top: 16px;
+ 
+}
+.container__detail-btn--Add-to_Cart:hover{
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.container__detail-btn--Buy{
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 0;
+  margin-top: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--white-color);
+  
+}
+.container__detail-btn--Buy:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: var(--black-color);
+  border: 1px solid #000;
+}
+.container__detail-content{
+  color: var(--text-small);
+  font-size: var(--text-small);
+  
+}
+.container__detail-content-item{
+line-height: 1.5;
+text-align: left;
+
+}
+.container__detail-share-heading{
+  color: var(--black-color);
+  text-align: center;
+  font-weight: 300;
+ 
+  font-size: 3.5rem;
+}
+.container__detail-share-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 64px 0;
+ 
+  
+  box-shadow: 0 0 15px #ccc;
+}
+/* Chi Tiet San Pham */
 
 
 /* Footer */

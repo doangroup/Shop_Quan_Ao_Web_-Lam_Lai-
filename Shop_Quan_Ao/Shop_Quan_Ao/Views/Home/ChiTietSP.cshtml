@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    SanPham sp = ViewBag.SanPham;
+    List<SanPham> ds_danhmuc = ViewBag.ds_DM;
+}
+@using Shop_Quan_Ao.Models;
+<div class="row">
+    <div class="col wide l-8">
+        <div class="container__detail-img-wrap">
+
+            <img src="~/Content/Hinh/@sp.HinhAnh" alt="ctsp" class="container__deatail-img">
+        </div>
+    </div>
+    <div class="col wide l-4">
+        <div class="container__detail-wrap">
+            <p class="container__detail-heading">@sp.TenSP</p>
+            <p class="container__deatail-price">@String.Format("{0:0,000}", @sp.DonGia) đ</p>
+            <div class="container__detail-btn">
+                <a href="#" class="btn  container__detail-btn--size ">Size M</a>
+                <a href="#"
+                   class="btn  container__detail-btn--size container__detail-btn--size-active">
+                    Size
+                    L
+                </a>
+                <a href="#" class="btn  container__detail-btn--size">Size XL</a>
+            </div>
+            <div class="row">
+                <div class="col wide l-12 ">
+                    <a href="@Url.Action("Themmathang", "DatHang", new { msp=@sp.MaSP})"
+                       class="btn container__detail-btn-link container__detail-btn--Add-to_Cart">
+                        Thêm
+                        Vào Giỏ Hàng
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col wide l-12 ">
+                    <a href="@Url.Action("Themmathang", "DatHang", new { msp=@sp.MaSP})"
+                       class="btn container__detail-btn-link container__detail-btn--Buy">
+                        Mua Hàng
+                    </a>
+                </div>
+            </div>
+            <div class="container__detail-content">
+                <p class="container__detail-content-heading">Chi Tiết Sản Phẩm</p>
+                <ul class="container__detail-content-list">
+                    <li class="container__detail-content-item"> @sp.GhiChu</li>
+                    <li class="container__detail-content-item"> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<p class="container__detail-share-heading">
+    GỢI Ý DÀNH CHO BẠN
+</p>
+<div class="row">
+    <div class="container__detail-share-wrap">
+@foreach (SanPham item in ds_danhmuc)
+            {
+        <div class="col wide l-3">
+            <a href="@Url.Action("ChiTietSP", "Home", new { id = @item.MaSP})" class="container__card-wrap--detail">
+
+                <img src="~/Content/Hinh/@item.HinhAnh" alt="sp" class="container__card-img">
+                <p class="container__card-heading">@item.TenSP</p>
+                <p class="container__card-price">@String.Format("{0:0,000}", @item.DonGia) đ</p>
+            </a>
+            <a href="@Url.Action("Themmathang", "DatHang", new { msp=@item.MaSP})" class="btn container__card-btn">
+                <p>Mua Hàng</p>
+            </a>
+
+        </div>
+            }
+    </div>
+
+</div>

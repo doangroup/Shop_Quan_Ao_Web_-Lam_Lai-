@@ -2428,6 +2428,10 @@
     <Content Include="Views\KhachHang\KhoiTaoKhach.cshtml" />
     <Content Include="Views\DatHang\XemGioHang.cshtml" />
     <Content Include="Views\DatHang\KhoiTaoLayout.cshtml" />
+    <Content Include="Views\Shared\_LayoutXacNhanHoaDon.cshtml" />
+    <Content Include="Views\DatHang\XacNhanDonHang.cshtml" />
+    <Content Include="Views\Home\ChiTietSP.cshtml" />
+    <Content Include="Views\DatHang\GioHangTrong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

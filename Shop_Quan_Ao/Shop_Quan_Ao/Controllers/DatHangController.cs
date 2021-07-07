@@ -20,9 +20,20 @@ namespace Shop_Quan_Ao.Controllers
         public ActionResult XemGioHang()
         {
             GioHang gh = (GioHang)Session["gh"];
+            if (gh==null)
+            {
+                return RedirectToAction("GioHangTrong","DatHang");
+            }
+           
             return View(gh);
         }
+        public ActionResult GioHangTrong()
+        {
+            
+            
 
+            return View();
+        }
         public ActionResult KhoiTaoLayout()
         {
 

@@ -35,7 +35,7 @@ namespace Shop_Quan_Ao.Controllers
         public ActionResult ChiTietSP(int id)
         {
             SanPham sp = data.SanPhams.SingleOrDefault(x => x.MaSP == id);
-            List<SanPham> ds_danhmuc = data.SanPhams.Where(s => s.MaDM == sp.MaDM).Take(3).ToList();
+            List<SanPham> ds_danhmuc = data.SanPhams.Where(s => s.MaDM == sp.MaDM).Take(4).ToList();
 
             ViewBag.SanPham = sp;
             ViewBag.ds_DM = ds_danhmuc;
