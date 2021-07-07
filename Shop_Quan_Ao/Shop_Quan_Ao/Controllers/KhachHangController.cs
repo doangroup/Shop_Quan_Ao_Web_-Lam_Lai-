@@ -73,6 +73,21 @@ namespace Shop_Quan_Ao.Controllers
             //ViewBag.khach = Khach;
             return PartialView(Khach);
         }
+        public ActionResult DangXuat()
+        {
 
+            Session["kh"] = null;
+            return RedirectToAction("Index", "Home");
+            return View();
+        }
+        public ActionResult DaDangNhap(FormCollection col)
+        {
+            KhachHang kh = (KhachHang)Session["kh"];
+            if (kh == null)
+            {
+                return RedirectToAction("DangNhap", "KhachHang");
+            }
+            return View(kh);
+        }
     }
 }

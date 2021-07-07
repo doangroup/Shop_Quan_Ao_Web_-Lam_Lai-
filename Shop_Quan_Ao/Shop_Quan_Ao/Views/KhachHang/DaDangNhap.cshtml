@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "DaDangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}@using Shop_Quan_Ao.Models;
+@model KhachHang
+
+<h1 class="container__account-login-heading">Thông tin tài khoản</h1>
+<div class="row">
+    <div class="col wide l-9">
+        <div class="row">
+            <div class="col wide l-12"><p class="container__account-login-name">Xin chào, <span>@Model.TenKH</span></p></div>
+        </div>
+        <div class="row">
+            <div class="col wide l-12"><p class="container__account-login-name">Đơn hàng gần nhất</p></div>
+        </div>
+        <div class="row">
+            <div class="col wide l-12">
+                <table class="container__account-login-table">
+                    <thead>
+                    <th>Đơn hàng #</th>
+                    <th>Ngày</th>
+                    <th>Chuyển đến</th>
+                    <th>Giá trị đơn hàng</th>
+                    <th>Tình trạng thanh toán</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+
+                            <td>20/08/2020</td>
+
+                            <td>HCM</td>
+
+                            <td>300.000vnd</td>
+
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col wide l-3">
+        <div class="row">
+            <div class="col wide l-12">
+                <div class="col wide l-12"><p class="container__account-login-name">Tài khoản của tôi</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col wide l-12">
+                <div class="col wide l-12"><p class="container__account-login-name">Tên tài khoản: <span>@Model.TenKH</span></p></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col wide l-12">
+                <div class="col wide l-12">
+                    <a href="@Url.Action("DangXuat","KhachHang")" class="container__account-item-link">Đăng Xuất</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

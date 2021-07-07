@@ -608,6 +608,53 @@ text-align: left;
 /* Chi Tiet San Pham */
 
 
+/* Account */
+.container__account-login-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 72px;
+}
+.container__account-login-name{
+  color: var(--text-color);
+  font-size: var(--text-small);
+  font-weight: 400;
+ 
+}
+.container__account-login-heading{
+  color: var(--text-color);
+  font-size:3rem;
+  font-weight: 500;
+  margin: 64px 0 0 0;
+}
+
+.container__account-login-table td,
+.container__account-login-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.container__account-login-table th{
+  font-size: var(--text-small);
+  color: var(--text-color);background-color: #f1f1f1;
+  text-align: left;
+}
+.container__account-login-table td{
+  font-size: var(--text-small);
+  color: var(--text-color);
+}
+.container__account-item-link{
+  padding: 16px 10px;
+  font-size: var(--text-medium);
+  color: var(--text-color);
+  text-decoration: none;
+  border: 1px solid #ccc;
+  display: block;
+  text-align: center;
+  transform: translateY(17px);
+}
+.container__account-item-link:hover{
+  background-color: #ccc;
+}
+/* Account */
 
 
 
