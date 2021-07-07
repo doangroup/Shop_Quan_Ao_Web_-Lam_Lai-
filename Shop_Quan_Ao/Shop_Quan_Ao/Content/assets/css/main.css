@@ -608,6 +608,11 @@ text-align: left;
 /* Chi Tiet San Pham */
 
 
+
+
+
+
+
 /* Footer */
 .footer {
 
@@ -663,3 +668,5 @@ text-align: left;
 .footer__item-link:hover {
   color: var(--primary-color);
 }
+
+

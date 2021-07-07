@@ -1,8 +1,160 @@
 ﻿@using Shop_Quan_Ao.Models;
 @{
     ViewBag.Title = "XacNhanDonHang";
-    Layout = "~/Views/Shared/_LayoutXacNhanHoaDon.cshtml";
-    KhachHang k = ViewBag.k;
+    Layout = "~/Views/Shared/_LayoutXacNhanDonHang.cshtml";
+KhachHang k = ViewBag.k;
 }
 @model GioHang
-<h2>XacNhanDonHang</h2>
+
+
+    <div class="grid wide">
+        <div class="row">
+            <div class="col wide l-8">
+                <div class="row">
+                    <div class="col wide l-12">
+                        <a href="#" class="order__logo-link">
+                            <img src="/Content/assets/img/logo.png" alt="logo" class="order__logo-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col wide l-6">
+                        <h1 class="oreder__form-heading">Thông Tin Nhận Hàng</h1>
+                        <form action="#" class="order__form-control">
+                            <div class="row">
+                                <div class="col wide l-12">
+                                    <input type="text" class="order__form-input" placeholder="Họ và Tên" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col wide l-12">
+                                    <input type="text" class="order__form-input" placeholder="Số Điện Thoại" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col wide l-12">
+                                    <input type="text" class="order__form-input" placeholder="Địa Chỉ" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col wide l-12">
+                                    <input type="date" class="order__form-input" required placeholder="Ngày Giao " onchange="this.className=(this.value!=''?'has-value':'') ">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col wide l-12">
+                                    <textarea name="GhiChu" class="order__form-input" cols="30" rows="10"
+                                              placeholder="Ghi chú (tùy chọn)"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col wide l-6">
+                        <h1 class="oreder__form-heading">Vận Chuyển</h1>
+                        <div class="row">
+                            <div class="col wide l-12">
+                                <p class="order__ship-heading">Vui lòng nhập thông tin giao hàng</p>
+                            </div>
+                        </div>
+                        <h1 class="oreder__form-heading">Thanh toán</h1>
+                        <div class="row">
+                            <div class="col wide l-12">
+                                <div class="order__ship-wrap">
+
+                                    <div class="order__ship-content">
+                                        <p class="oreder__ship-tilte">Thanh toán khi giao hàng (COD)</p>
+                                        <i class="oreder__ship-icon far fa-money-bill-alt"></i>
+                                    </div>
+                                    <div class="order__ship-text-remember">
+                                        <p class="order__ship-text-rem-tilte">Bạn chỉ phải thanh toán khi nhận được hàng</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col wide l-4">
+                <div class="confirm__wrap">
+                    <div class="row">
+                        <div class="col wide l-12">
+                            <h1 class="confirm__heading">Đơn Hàng (<span class="confirm__heading-number">@Model.Tongsoluong()</span> sản phẩm)</h1>
+                        </div>
+                    </div>
+                    <hr class="hr">
+
+                    <div class="row">
+                        <div class="col wide l-12">
+@foreach (CartItem item in Model.dsSp)
+                        {
+                            <div class="row">
+                                <div class="confirm__item-wrap">
+
+                                    <div class="col wide l-3">
+                                        <img src="~/Content/Hinh/@item.sAnhBia" alt="sp" class="confirm__item-img">
+                                        <span class="confirm__item-content-quantity">@item.iSoLuong</span>
+                                    </div>
+                                    <div class="col wide l-3">
+                                        <div class="confirm__item-content">
+                                            <p class="confirm__item-content-tiltle">@item.sTenSp</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col wide l-3">
+                                        <p class="confirm__item-price">@String.Format("{0:0,000}", @item.sDonGia) đ</p>
+                                    </div>
+                                </div>
+                            </div>}
+                        </div>
+
+                    </div>
+                    <hr class="hr">
+
+                    <div class="row">
+                        <div class="col wide l-12">
+                            <div class="confirm__total-wrap">
+                                <p class="confirm__total-heading">Tạm tính</p>
+                                <p class="confirm__total-price">@String.Format("{0:0,000}", @Model.TongThanhTien()) đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col wide l-12">
+                            <div class="confirm__total-wrap">
+                                <p class="confirm__total-heading">Phí vận chuyển</p>
+                                <p class="confirm__total-price"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr">
+                    <div class="row">
+                        <div class="col wide l-12">
+                            <div class="confirm__total-wrap">
+                                <p class="confirm__total-heading--final">Tổng cộng</p>
+                                <p class="confirm__total-price-final">@String.Format("{0:0,000}", @Model.TongThanhTien()) đ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col wide l-12">
+                            <div class="confirm__total-wrap">
+                                <a href="#" class="confirm__total-link">
+                                    <p class="btn confirm__total-price-final">Quay về giỏ hàng</p>
+                                </a>
+
+                                <a href="#" class="confirm__total-link">
+                                    <input type="submit" value="Đặt Hàng" class="btn confirm__total-price-final confirm__total-price-final--confirm">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+

@@ -1,0 +1,170 @@
+﻿/* Xac Nhan Don Hang */
+.oreder__form-heading {
+  color: var(--text-color);
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.2rem;
+}
+
+.order__form-control {}
+
+.order__form-input {
+  padding: 10px 60px;
+  font-size: var(--text-small);
+  text-align: left;
+  margin: 4px 0;
+  display: block;
+  width: 100%;
+}
+
+.order__ship-heading {
+  width: 100%;
+
+  padding: 12px;
+  margin: 3px;
+  border-radius: 3px;
+  background-color: #D1ECF1;
+  text-align: center;
+  font-weight: 300;
+  font-size: var(--text-small);
+  box-shadow: 0 0 10px #D1ECF1;
+}
+
+.order__ship-wrap {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 15px #ccc;
+}
+
+.order__ship-content {
+  font-size: var(--text-small);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-color);
+  font-weight: 300;
+}
+
+.oreder__ship-tilte {
+  margin: 16px;
+}
+
+.oreder__ship-icon {
+  color: #1990C6;
+  margin: 16px;
+  font-size: var(--text-medium);
+}
+
+.order__ship-text-remember {
+  border-top: 1px solid #ccc;
+}
+
+.order__ship-text-rem-tilte {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: var(--text-small);
+  margin: 16px;
+
+}
+
+.confirm__item-img {
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+  border: 1px solid #000;
+  box-shadow: 0 0 10px #ccc;
+  position: relative;
+}
+.confirm__item-content-quantity{
+  position: absolute;
+  font-size: var(--text-medium);
+  color: var(--white-color);
+  border-radius: 31%;
+  background-color: #2A9DCC;
+  width: 18px;
+  left: 63.5%;
+  top: 9%;
+}
+.confirm__heading {
+  color: var(--text-color);
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.2rem;
+}
+
+.confirm__item-content {
+  font-size: var(--text-small);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.confirm__heading-number {
+  color: red;
+}
+
+.confirm__item-wrap {
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+}
+.confirm__item-price{
+  font-size: var(--text-small);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+.hr{
+  border-top: 1px solid #ccc;
+}
+.confirm__total-wrap{
+  font-size: var(--text-small);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.confirm__total-heading--final{
+  font-size: var(--text-large);
+}
+.confirm__total-price-final{
+  font-size: var(--text-small);
+  color: var(--text-color);
+  font-weight: 500;
+ margin: 0;
+
+}
+.confirm__total-price-final--confirm{
+  background-color: #2A9DCC;
+  color: var(--white-color);
+  font-weight: 300;
+  font-size: var(--text-large);
+}
+.confirm__total-link{
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.confirm__total-price-final:hover{
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.confirm__wrap{
+ 
+}
+input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
+/* Xac Nhan Don Hang */

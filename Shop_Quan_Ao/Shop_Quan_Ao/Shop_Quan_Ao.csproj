@@ -148,6 +148,7 @@
     <Content Include="Content\assets\css\grid.css" />
     <Content Include="Content\assets\css\main.css" />
     <Content Include="Content\assets\css\responsive.css" />
+    <Content Include="Content\assets\css\xacnhandonhang.css" />
     <Content Include="Content\assets\font\fontawesome-free-5.15.3\attribution.js" />
     <Content Include="Content\assets\font\fontawesome-free-5.15.3\css\all.css" />
     <Content Include="Content\assets\font\fontawesome-free-5.15.3\css\all.min.css" />
@@ -2428,10 +2429,10 @@
     <Content Include="Views\KhachHang\KhoiTaoKhach.cshtml" />
     <Content Include="Views\DatHang\XemGioHang.cshtml" />
     <Content Include="Views\DatHang\KhoiTaoLayout.cshtml" />
-    <Content Include="Views\Shared\_LayoutXacNhanHoaDon.cshtml" />
-    <Content Include="Views\DatHang\XacNhanDonHang.cshtml" />
     <Content Include="Views\Home\ChiTietSP.cshtml" />
     <Content Include="Views\DatHang\GioHangTrong.cshtml" />
+    <Content Include="Views\Shared\_LayoutXacNhanDonHang.cshtml" />
+    <Content Include="Views\DatHang\XacNhanDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
