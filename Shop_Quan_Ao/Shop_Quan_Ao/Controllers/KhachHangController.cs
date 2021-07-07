@@ -80,14 +80,24 @@ namespace Shop_Quan_Ao.Controllers
             return RedirectToAction("Index", "Home");
             return View();
         }
-        public ActionResult DaDangNhap(FormCollection col)
+        public ActionResult DaDangNhap()
         {
+
+          
             KhachHang kh = (KhachHang)Session["kh"];
+              
             if (kh == null)
             {
+                
                 return RedirectToAction("DangNhap", "KhachHang");
             }
-            return View(kh);
+          
+                
+            List<HoaDon> hd = data.HoaDons.Where(m => m.MaKH == kh.MaKH).ToList();
+            
+            ViewBag.Khach = kh;
+            return View(hd);
         }
+        
     }
 }

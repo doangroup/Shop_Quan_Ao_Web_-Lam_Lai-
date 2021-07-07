@@ -180,6 +180,18 @@
         </div>
 
     </div>
+    @*Cách thay đổi giá trị trên Fronent bằng điều kiện. Thay đổi nội dung tag bằng if*@
+    <script>
+        var x = document.querySelectorAll(".content");
+        console.log(x);
+        for (var i = 0; i < x.length; i++) {
+            if (x[i].innerHTML == 0) {
+                x[i].innerHTML = "Chưa Giao";
+            } else if (x[i].innerHTML == 1) {
+                x[i].innerHTML = "Đã Giao";
+            }
+        }
+    </script>
 
 </body>
 </html>

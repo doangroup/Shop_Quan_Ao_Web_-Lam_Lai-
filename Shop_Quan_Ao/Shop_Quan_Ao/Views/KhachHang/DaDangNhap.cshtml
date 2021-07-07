@@ -1,14 +1,16 @@
-﻿@{
+﻿@using Shop_Quan_Ao.Models;
+@{
     ViewBag.Title = "DaDangNhap";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}@using Shop_Quan_Ao.Models;
-@model KhachHang
-
+    KhachHang kh = ViewBag.Khach;
+}
+@model List<HoaDon>
+         
 <h1 class="container__account-login-heading">Thông tin tài khoản</h1>
 <div class="row">
     <div class="col wide l-9">
         <div class="row">
-            <div class="col wide l-12"><p class="container__account-login-name">Xin chào, <span>@Model.TenKH</span></p></div>
+            <div class="col wide l-12"><p class="container__account-login-name">Xin chào, <span>@kh.TenKH</span></p></div>
         </div>
         <div class="row">
             <div class="col wide l-12"><p class="container__account-login-name">Đơn hàng gần nhất</p></div>
@@ -24,17 +26,21 @@
                     <th>Tình trạng thanh toán</th>
                     </thead>
                     <tbody>
+@foreach (HoaDon item in Model)
+            {
                         <tr>
-                            <td>1</td>
+                            <td>@item.MaHD</td>
 
-                            <td>20/08/2020</td>
+                            <td> @String.Format("{0:dd-MM-yyyy}", @item.NgayBan)</td>
 
-                            <td>20/09/2020</td>
+                            <td>
+                            @String.Format("{0:dd-MM-yyyy}", @item.NgayGiao)</td>
 
-                            <td>300.000vnd</td>
+                            <td>@String.Format("{0:0,000}", @item.TongTien) đ</td>
 
-                            <td>0</td>
+                            <td class="content">@item.Tinhtrang</td>
                         </tr>
+}
                     </tbody>
                 </table>
             </div>
@@ -48,7 +54,7 @@
         </div>
         <div class="row">
             <div class="col wide l-12">
-                <div class="col wide l-12"><p class="container__account-login-name">Tên tài khoản: <span>@Model.TenKH</span></p></div>
+                <div class="col wide l-12"><p class="container__account-login-name">Tên tài khoản: <span>@kh.TenKH</span></p></div>
             </div>
         </div>
 
