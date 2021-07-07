@@ -33,7 +33,7 @@ namespace Shop_Quan_Ao.Controllers
                (k => k.SDT == ten && k.MatKhau == mk);
             if (khach == null)
             {
-                TempData["message2"] = "Tên Đăng Nhập Hoặc Mật Khẩu Không Chính Xác";
+                TempData["message2"] = "Sai Mật Khẩu";
                 return View();
                 
 

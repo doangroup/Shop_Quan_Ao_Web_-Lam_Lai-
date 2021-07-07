@@ -6,7 +6,7 @@
 {
     <script>alert('@TempData["message1"]');</script>
 }
-else if (TempData["message2"] != null)
+@if (TempData["message2"] != null)
 {
      <script>alert('@TempData["message2"]');</script>
 }

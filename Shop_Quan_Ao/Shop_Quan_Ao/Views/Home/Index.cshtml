@@ -6,6 +6,10 @@
 {
     <script>alert('@TempData["message"]');</script>
 }
+@if (TempData["message1"] != null)
+{
+    <script>alert('@TempData["message1"]');</script>
+}
 <div class="row">
     <div class="col wide l-12">
         <div class="container__silder">
