@@ -2,7 +2,14 @@
     ViewBag.Title = "DangNhap";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@if (TempData["message1"] != null)
+{
+    <script>alert('@TempData["message1"]');</script>
+}
+else if (TempData["message2"] != null)
+{
+     <script>alert('@TempData["message2"]');</script>
+}
 <div class="row">
     <div class="container__account">
         <div class="col wide l-6">
