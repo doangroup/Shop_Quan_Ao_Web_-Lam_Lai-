@@ -20,17 +20,17 @@ namespace Shop_Quan_Ao.Controllers
         public ActionResult XemGioHang()
         {
             GioHang gh = (GioHang)Session["gh"];
-            if (gh==null)
+            if (gh == null)
             {
-                return RedirectToAction("GioHangTrong","DatHang");
+                return RedirectToAction("GioHangTrong", "DatHang");
             }
-           
+
             return View(gh);
         }
         public ActionResult GioHangTrong()
         {
-            
-            
+
+
 
             return View();
         }
@@ -65,9 +65,9 @@ namespace Shop_Quan_Ao.Controllers
         {
 
             Session["gh"] = null;
-          
+
             return RedirectToAction("Index", "Home");
-           
+
         }
 
         public ActionResult XacNhanDonHang()
@@ -97,24 +97,36 @@ namespace Shop_Quan_Ao.Controllers
                 return RedirectToAction("XemGioHang", "DatHang");
             }
             string ngaygiao = col["txtDate"];
+            string tenKhach = col["TenKhach"];
+            string sdt = col["SDT_Khach"];
+            string diaChi = col["DiachiKhach"];
             Random rd = new Random();
             int nn = rd.Next(1, 10000);
             HoaDon hd = new HoaDon();
             hd.MaHD = nn;
-
+            hd.MaNV = 1;
             hd.MaKH = khach.MaKH;
             hd.NgayBan = DateTime.Now;
             hd.Tinhtrang = 0;
             hd.NgayGiao = Convert.ToDateTime(ngaygiao);
             data.HoaDons.InsertOnSubmit(hd);
-
-            data.SubmitChanges();
+            try
+            {
+                data.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("XacNhanDonHang", "DatHang");
+                throw;
+            }
+           
 
             //////////
             foreach (CartItem item in gh.dsSp)
             {
                 ChiTietHD ct = new ChiTietHD();
                 ct.MaHD = hd.MaHD;
+
 
                 ct.SoLuong = item.iSoLuong;
                 ct.ThanhTien = item.ThanhTien;
