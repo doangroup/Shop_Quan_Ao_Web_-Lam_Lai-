@@ -65,7 +65,9 @@ namespace Shop_Quan_Ao.Controllers
         {
 
             Session["gh"] = null;
+          
             return RedirectToAction("Index", "Home");
+           
         }
 
         public ActionResult XacNhanDonHang()
@@ -73,6 +75,7 @@ namespace Shop_Quan_Ao.Controllers
             KhachHang khach = Session["kh"] as KhachHang;
             if (khach == null)
             {
+                TempData["message"] = "Bạn Chưa Đăng Nhập";
                 return RedirectToAction("Index", "Home");
             }
             ViewBag.k = khach;

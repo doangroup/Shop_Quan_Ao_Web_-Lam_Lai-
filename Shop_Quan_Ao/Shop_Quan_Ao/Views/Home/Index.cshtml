@@ -2,7 +2,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@if (TempData["message"] != null)
+{
+    <script>alert('@TempData["message"]');</script>
+}
 <div class="row">
     <div class="col wide l-12">
         <div class="container__silder">
