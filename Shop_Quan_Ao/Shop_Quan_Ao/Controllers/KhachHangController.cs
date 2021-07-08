@@ -10,7 +10,7 @@ namespace Shop_Quan_Ao.Controllers
     public class KhachHangController : Controller
     {
         //
-        DataClasses2DataContext data = new DataClasses2DataContext();
+        DataClasses1DataContext data = new DataClasses1DataContext();
         // GET: /KhachHang/
 
         public ActionResult Index()
@@ -78,7 +78,7 @@ namespace Shop_Quan_Ao.Controllers
 
             Session["kh"] = null;
             return RedirectToAction("Index", "Home");
-            return View();
+           
         }
         public ActionResult DaDangNhap()
         {

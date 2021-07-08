@@ -18,7 +18,7 @@ namespace Shop_Quan_Ao.Models
         {
             get { return iSoLuong * sDonGia; }
         }
-        DataClasses2DataContext data = new DataClasses2DataContext();
+        DataClasses1DataContext data = new DataClasses1DataContext();
         public CartItem(int MaSp)
         {
             SanPham sp = data.SanPhams.Single(n => n.MaSP == MaSp);

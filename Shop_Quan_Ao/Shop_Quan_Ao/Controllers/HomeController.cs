@@ -11,7 +11,7 @@ namespace Shop_Quan_Ao.Controllers
     {
         //
         // GET: /Home/
-        DataClasses2DataContext data = new DataClasses2DataContext();
+        DataClasses1DataContext data = new DataClasses1DataContext();
         public ActionResult Index()
         {
             return View();

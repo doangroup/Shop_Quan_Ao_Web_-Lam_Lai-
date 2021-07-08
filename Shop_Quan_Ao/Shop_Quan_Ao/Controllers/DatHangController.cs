@@ -10,7 +10,7 @@ namespace Shop_Quan_Ao.Controllers
     public class DatHangController : Controller
     {
         //
-        DataClasses2DataContext data = new DataClasses2DataContext();
+        DataClasses1DataContext data = new DataClasses1DataContext();
         // GET: /DatHang/
 
         public ActionResult Index()
