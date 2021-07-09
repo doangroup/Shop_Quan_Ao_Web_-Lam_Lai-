@@ -21,17 +21,14 @@
 
 </head>
 <body>
-
-
-
     <div class="main">
         <header class="header">
             <div class="grid wide">
                 <div class="row">
                     <div class="col wide l-2">
                         <a href="" class="header__logo-link">
-                            <img src="/Content/assets/img/logo.png" alt="logo" class="header__logo-img" />
-
+                            <img src="/Content/assets/img/logo.png" alt="logo" class="header__logo-img">
+                                
                         </a>
                     </div>
                     <div class="col wide l-8">
@@ -42,11 +39,11 @@
                                     <a href="#" class="header__menu-link">SẢN PHẨM</a>
                                     <nav class="subnav">
                                         @*<ul class="header__product-list">
-                                                <li class="header__product-item"><a href="Aosomi.html" class="header__product-link">Áo sơ mi</a></li>
-                                                <li class="header__product-item"><a href="#" class="header__product-link">Áo thun</a></li>
-                                                <li class="header__product-item"><a href="#" class="header__product-link">Quần Jean</a></li>
-
-                                            </ul>*@
+                                            <li class="header__product-item"><a href="Aosomi.html" class="header__product-link">Áo sơ mi</a></li>
+                                            <li class="header__product-item"><a href="#" class="header__product-link">Áo thun</a></li>
+                                            <li class="header__product-item"><a href="#" class="header__product-link">Quần Jean</a></li>
+                                 
+                                        </ul>*@
                                         @Html.Action("DanhSach_DanhMuc_SanPham", "Home")
                                     </nav>
                                 </li>
@@ -57,27 +54,15 @@
                     </div>
                     <div class="col wide l-2">
                         <nav>
-                            @*<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                           aria-label="Search" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fas fa-search fa-sm"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>*@
                             <ul class="header__selector-list">
                                 <li class="header__selector-item">
-                                    @*<a href="#" class="header__selector-link">
-                                            <i class="header__selector-icon fas fa-search"></i>
-                                        </a>
-                                        <form action="#" class="header__selector-form-control">
-                                            <input type="text" class="header__selector-search-input" placeholder="Bạn đang tìm...">
-                                            <input type="submit" class="btn btn--size-s" value="Tìm kiếm">
-                                        </form>
-
+                                    <a href="#" class="header__selector-link">
+                                        <i class="header__selector-icon fas fa-search"></i>
+                                    </a>
+                                    <form action="#" class="header__selector-form-control">
+                                        <input type="text" class="header__selector-search-input" placeholder="Bạn đang tìm...">
+                                        <input type="submit" class="btn btn--size-s" value="Tìm kiếm">
+                                    </form>
                                 </li>
                                 <li class="header__selector-item">
                                     <a href="@Url.Action("DaDangNhap","KhachHang")" class="header__selector-link">
@@ -85,7 +70,7 @@
                                     </a>
                                     <ul class="header__user-list">
                                         @*<li class="header__user-item"><a href="#" class="header__user-link">Đăng nhập</a></li>
-                                            <li class="header__user-item"><a href="#" class="header__user-link">Đăng ký</a></li>*@
+                                        <li class="header__user-item"><a href="#" class="header__user-link">Đăng ký</a></li>*@
 
                                         <li class="header__user-item"><a href="#" class="header__user-link">@Html.Action("KhoiTaoKhach", "KhachHang")</a></li>
                                     </ul>
@@ -110,7 +95,6 @@
         <div class="container">
             <div class="grid wide">
                 @RenderBody()
-
                 <div class="row">
                     <div class="col wide l-12">
                         <div class="container__contact">
