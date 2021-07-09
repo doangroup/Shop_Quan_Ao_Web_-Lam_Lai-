@@ -39,8 +39,7 @@
                         </td>
                         <td>@item.GhiChu</td>
                         <td>
-                            <a href="/Admin/SanPham/Edit/@item.MaSP">Sửa</a>
-                            @Html.ActionLink("Xóa","Delete","SanPham")
+                            @Html.ActionLink("Xóa", "Delete", "SanPham", new { id = item.MaSP })
                             @Html.ActionLink("Thêm", "Create", "SanPham")
                         </td>
                     </tr>

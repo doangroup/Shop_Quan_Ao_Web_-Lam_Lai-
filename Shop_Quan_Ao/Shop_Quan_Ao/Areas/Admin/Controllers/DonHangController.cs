@@ -14,20 +14,46 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
         DataClasses1DataContext data = new DataClasses1DataContext();
         public ActionResult Index(int id)
         {
-
-            List<ChiTietHD> dm = data.ChiTietHDs.Where(m => m.MaHD == id).ToList();
+            var dm = data.ChiTietHDs.Where(m => m.MaHD == id).ToList();
             return View(dm);
         }
 
         public ActionResult Index2()
         {
-            var sp = data.HoaDons.OrderBy(t => t.MaHD).Distinct().ToList();
+            var sp = data.HoaDons.Where(z => z.NgayGiao == null && z.Tinhtrang == 0).OrderBy(t => t.MaHD).Distinct().ToList();
             return View(sp);
         }
-        public ActionResult XacNhanDon()
+        public ActionResult XacNhanDon(int id)
         {
-            return View();
-        }
+            if (ModelState.IsValid)
+            {
 
+                var maTK = Sua(id);
+                if (maTK)
+                {
+                    return RedirectToAction("Index2", "DonHang");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Sửa thất bại !");
+                }
+            }
+            return View("Index2");
+        }
+        public bool Sua(int id)
+        {
+            try
+            {
+                var sanPham = data.HoaDons.SingleOrDefault(t => t.MaHD== id);
+                sanPham.Tinhtrang = 1;
+                data.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
     }
 }

@@ -22,6 +22,10 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult Delete()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult Edit(int ma)
         {
@@ -65,21 +69,17 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
             return View("Index");
         }
         [HttpDelete]
-        public ActionResult Delete(int ma)
+        public ActionResult Delete(int id)
         {
-            if (ModelState.IsValid)
+            SanPham sach = data.SanPhams.SingleOrDefault(n => n.MaSP == id);
+            if (sach == null)
             {
-                var maTK = Xoa(ma);
-                if (maTK)
-                {
-                    return RedirectToAction("Index", "SanPham");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Xóa thành công !");
-                }
+                Response.StatusCode = 404;
+                return null;
             }
-            return View("Index");
+            data.SanPhams.DeleteOnSubmit(sach);
+            data.SubmitChanges();
+            return RedirectToAction("Index","Home");
         }
        
         
@@ -113,11 +113,11 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
                 throw;
             }
         }
-        public bool Xoa(int madm)
+        public bool Xoa(int id)
         {
             try
             {
-                SanPham sanPham = data.SanPhams.SingleOrDefault(t => t.MaSP == madm);
+                SanPham sanPham = data.SanPhams.SingleOrDefault(t => t.MaSP == id);
                 data.SanPhams.DeleteOnSubmit(sanPham);
                 data.SubmitChanges();
                 return true;
