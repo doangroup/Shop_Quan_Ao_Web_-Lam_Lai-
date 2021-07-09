@@ -23,7 +23,7 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Edit(int ma = 0)
+        public ActionResult Edit(int ma)
         {
             var model = xemChiTiet(ma);
             return View(model);
@@ -34,9 +34,6 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 
-
-
-
                 long maTK =Them(dm);
                 if (maTK > 0)
                 {
@@ -70,9 +67,22 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
         [HttpDelete]
         public ActionResult Delete(int ma)
         {
-            Xoa(ma);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var maTK = Xoa(ma);
+                if (maTK)
+                {
+                    return RedirectToAction("Index", "SanPham");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Xóa thành công !");
+                }
+            }
+            return View("Index");
         }
+       
+        
 
         
         public long Them(SanPham ncc)
@@ -85,10 +95,10 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
         {
             try
             {
-                SanPham sanPham = data.SanPhams.Where(t => t.MaSP == sp.MaSP).FirstOrDefault();
+                SanPham sanPham = data.SanPhams.SingleOrDefault(t => t.MaSP == sp.MaSP);
 
 
-                sanPham.MaSP = sp.MaSP;
+               
                 sanPham.MaDM = sp.MaDM;
                 sanPham.TenSP = sp.TenSP;
                 sanPham.SoLuong = sp.SoLuong;
@@ -107,7 +117,7 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
         {
             try
             {
-                SanPham sanPham = data.SanPhams.Where(t => t.MaSP == madm).FirstOrDefault();
+                SanPham sanPham = data.SanPhams.SingleOrDefault(t => t.MaSP == madm);
                 data.SanPhams.DeleteOnSubmit(sanPham);
                 data.SubmitChanges();
                 return true;

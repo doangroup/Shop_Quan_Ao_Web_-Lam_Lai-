@@ -30,50 +30,56 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"></div>
+                            
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <a href="" class="header__logo-link">
+                                    <img src="~/Content/assets/img/logo2.png" alt="logo"
+                                         class="header__logo-img">
+                                </a>
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Chào Mừng Bạn!</h1>
                                     </div>
                                     @using (Html.BeginForm())
-                                        {
-                                            @Html.AntiForgeryToken()
-                                            @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
-                                            <form class="user">
-                                                <div class="form-group">
-                                                    @Html.TextBoxFor(tk => tk.tenDN, new { @class = "form-control form-control-user", @placeholder = "Tài khoản đăng nhập...", @autofocus = "autofocus"})
-                                                </div>
-                                                <div class="form-group">
-                                                    @Html.TextBoxFor(tk => tk.matKhau, new { @class = "form-control form-control-user", @placeholder = "Mật khẩu đăng nhập...", @type = "password" })
-                                                </div>
-                                                <div class="form-group">
-                                                    @Html.CheckBoxFor(tk => tk.nhoMK)
-                                                    Nhớ Mật Khẩu
-                                                </div>
-                                                <button class="btn btn-primary btn-user btn-block" type="submit">
-                                                    Đăng Nhập
-                                                </button>
-                                                <hr>
-                                            </form>
-                                        }
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                                        <form class="user">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(tk => tk.tenDN, new { @class = "form-control form-control-user", @placeholder = "Tài khoản đăng nhập...", @autofocus = "autofocus" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(tk => tk.matKhau, new { @class = "form-control form-control-user", @placeholder = "Mật khẩu đăng nhập...", @type = "password" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.CheckBoxFor(tk => tk.nhoMK)
+                                                Nhớ Mật Khẩu
+                                            </div>
+                                            <button class="btn btn-primary btn-user btn-block" type="submit">
+                                                Đăng Nhập
+                                            </button>
+                                            <hr>
+                                        </form>
+                                    }
                                     @*<form class="user">
-                                        <div class="form-group">
-                                            <div class="orm-control form-control-user">
-                                                <input type="text" name="Username" required placeholder="Số Điện Thoại"
-                                                       class="container__account-form">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="orm-control form-control-user">
-                                                <input type="password" name="Password" required placeholder="Mật Khẩu"
-                                                       class="container__account-form">
-                                            </div>
-                                        </div>
-                                        <div class="col wide l-12">
-                                            <input type="submit" class="btn btn-sign-up" value="Đăng Nhập">
-                                        </div>
-                                    </form>*@
+                    <div class="form-group">
+                        <div class="orm-control form-control-user">
+                            <input type="text" name="Username" required placeholder="Số Điện Thoại"
+                                   class="container__account-form">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="orm-control form-control-user">
+                            <input type="password" name="Password" required placeholder="Mật Khẩu"
+                                   class="container__account-form">
+                        </div>
+                    </div>
+                    <div class="col wide l-12">
+                        <input type="submit" class="btn btn-sign-up" value="Đăng Nhập">
+                    </div>
+                </form>*@
                                 </div>
                             </div>
                         </div>

@@ -19,42 +19,37 @@
                             @Html.AntiForgeryToken()
                             @Html.ValidationSummary(true)
                             <div class="form-group">
-                                <label>@Html.LabelFor(model => model.MaSP)</label>
-                                @Html.TextBoxFor(model => model.MaSP, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.MaSP)
-                            </div>
-                            <div class="form-group">
-                                <label>@Html.LabelFor(model => model.MaDM)</label>
+                                <label>@Html.LabelFor(model => model.MaDM,"Mã Danh Mục")</label>
                                 @Html.TextBoxFor(model => model.MaDM, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.MaDM)
                             </div>
                             <div class="form-group">
-                                <label>@Html.LabelFor(model => model.TenSP)</label>
+                                <label>@Html.LabelFor(model => model.TenSP,"Tên Sản Phẩm")</label>
                                 @Html.TextBoxFor(model => model.TenSP, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.TenSP)
                             </div>
                             <div class="form-group">
-                                <label>@Html.LabelFor(model => model.SoLuong)</label>
+                                <label>@Html.LabelFor(model => model.SoLuong,"Số Lượng")</label>
                                 @Html.TextBoxFor(model => model.SoLuong, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.SoLuong)
                             </div>
                             <div class="form-group">
-                                <label>@Html.LabelFor(model => model.DonGia)</label>
+                                <label>@Html.LabelFor(model => model.DonGia,"Đơn Giá")</label>
                                 @Html.TextBoxFor(model => model.DonGia, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.DonGia)
                             </div>
                             <div class="form-group">
-                                <label>@Html.LabelFor(model => model.HinhAnh)</label>
+                                <label>@Html.LabelFor(model => model.HinhAnh,"Hình Ảnh")</label>
                                 @Html.TextBoxFor(model => model.HinhAnh, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.HinhAnh)
                             </div>
                             <div class="form-group">
-                                <label>@Html.LabelFor(model => model.GhiChu)</label>
+                                <label>@Html.LabelFor(model => model.GhiChu,"Ghi Chú")</label>
                                 @Html.TextBoxFor(model => model.GhiChu, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.GhiChu)
                             </div>
                             <p>
-                                <input type="submit" value="Tạo Mới" />
+                                <input class="btn btn-primary btn-user btn-block" type="submit" value="Tạo Mới" />
                             </p>
                         }
 

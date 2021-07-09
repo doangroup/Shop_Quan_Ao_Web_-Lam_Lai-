@@ -1,0 +1,46 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+@model List<Shop_Quan_Ao.Models.ChiTietHD>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh Sách Đơn Hàng</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mã Chi Tiết</th>
+                        <th>Mã Hóa Đơn</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Đơn Giá</th>
+                        <th>Thành Tiền</th>
+                        <th>Tổng Tiền</th>
+                        <th>@Html.ActionLink("Trở Về", "Index2", "DonHang")</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    @foreach (var item in Model)
+                    {
+                    <tr class="row_@item.MaCTHD">
+                        <td>@item.MaCTHD</td>
+                        <td>@item.HoaDon.MaHD</td>
+                        <td>@item.SanPham.TenSP</td>
+                        <td>@item.SoLuong</td>
+                        <td>@string.Format("{0:0,0}", item.SanPham.DonGia) NVĐ</td>
+                        <td>@string.Format("{0:0,0}", item.ThanhTien) NVĐ</td>
+                        <td>@item.HoaDon.TongTien</td>
+                    </tr>
+
+                    }
+
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

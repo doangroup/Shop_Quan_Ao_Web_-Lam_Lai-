@@ -138,6 +138,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\DangNhapController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DonHangController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\Admin\Models\TaiKhoan.cs" />
@@ -157,7 +158,6 @@
     <Compile Include="Models\MaHoaMD5.cs" />
     <Compile Include="Models\NguoiDungDangNhap.cs" />
     <Compile Include="Models\NguoiDungSesstion.cs" />
-    <Compile Include="Models\SanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3862,7 +3862,7 @@
     <Content Include="Content\assets\img\colect_r_bottom.jpg" />
     <Content Include="Content\assets\img\collec_left.png" />
     <Content Include="Content\assets\img\gg_play.png" />
-    <Content Include="Content\assets\img\logo.jpg" />
+    <Content Include="Content\assets\img\logo2.png" />
     <Content Include="Content\assets\img\logo.png" />
     <Content Include="Content\assets\img\no-cart.png" />
     <Content Include="Content\assets\img\slider_1.jpg" />
@@ -4275,6 +4275,9 @@
     <Content Include="Areas\Admin\Views\SanPham\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SanPham\Create.cshtml" />
     <Content Include="Areas\Admin\Views\SanPham\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Index2.cshtml" />
     <None Include="Models\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>

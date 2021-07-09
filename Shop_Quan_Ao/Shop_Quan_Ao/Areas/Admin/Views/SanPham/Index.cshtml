@@ -2,8 +2,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
 }
-@using Shop_Quan_Ao.Models
-@model List<SanPham>
+@model List<Shop_Quan_Ao.Models.SanPham>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Danh Sách Sản Phẩm</h6>
@@ -25,22 +24,22 @@
                 <tfoot>
                     @foreach (var item in Model)
                     {
-                    <tr class="row_@item.MaSP">
-                        <td>@item.MaSP</td>
-                        <td>@item.DanhMuc.MaDM</td>
-                        <td>@item.TenSP</td>
-                        <td>@item.SoLuong</td>
-                        <td>@item.DonGia</td>
-                        <td>
-                            <img src="~/Content/Hinh/@item.HinhAnh" alt="sp" class="container__card-img">
-                        </td>
-                        <td>@item.GhiChu</td>
-                        <td>
-                            <a href="/Admin/SanPham/Edit/@item.MaSP">Sửa</a>
-                            @Html.ActionLink("Xóa", "Delete", "SanPham")
-                            @Html.ActionLink("Thêm", "Create", "SanPham")
-                        </td>
-                    </tr>
+                        <tr class="row_@item.MaSP">
+                            <td>@item.MaSP</td>
+                            <td>@item.DanhMuc.MaDM</td>
+                            <td>@item.TenSP</td>
+                            <td>@item.SoLuong</td>
+                            <td>@item.DonGia</td>
+                            <td>
+                                <img src="~/Content/Hinh/@item.HinhAnh" alt="sp" class="container__card-img">
+                            </td>
+                            <td>@item.GhiChu</td>
+                            <td>
+                                <a href="/Admin/SanPham/Edit/@item.MaSP">Sửa</a>
+                                @Html.ActionLink("Xóa", "Delete", "SanPham")
+                                @Html.ActionLink("Thêm", "Create", "SanPham")
+                            </td>
+                        </tr>
 
                     }
 
