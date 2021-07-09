@@ -59,7 +59,7 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
         {
 
             Session["nv"] = null;
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "DangNhap");
 
         }
         public NhanVien layTKTheoTen(string tenDN)

@@ -19,6 +19,9 @@
                         <th>Đơn Giá</th>
                         <th>Ảnh</th>
                         <th>Ghi Chú</th>
+                        <th>
+                            @Html.ActionLink("Thêm", "Create", "SanPham", new { @class = "btn btn-outline-primary" })
+                        </th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -30,14 +33,15 @@
                             <td>@item.TenSP</td>
                             <td>@item.SoLuong</td>
                             <td>@item.DonGia</td>
+
                             <td>
                                 <img src="~/Content/Hinh/@item.HinhAnh" alt="sp" class="container__card-img">
                             </td>
                             <td>@item.GhiChu</td>
                             <td>
                                 @*@Html.ActionLink("Sửa", "Edit", "SanPham", new { SanPham = item })*@
-                                @Html.ActionLink("Xóa", "Delete", "SanPham", new { id = item.MaSP })
-                                @Html.ActionLink("Thêm", "Create", "SanPham")
+                                @Html.ActionLink("Xóa", "Delete", "SanPham", new { id = item.MaSP },new { @class= "btn btn-outline-primary" })
+                               
                             </td>
                         </tr>
 

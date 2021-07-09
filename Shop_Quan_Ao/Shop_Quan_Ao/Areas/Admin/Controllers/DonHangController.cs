@@ -40,6 +40,11 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
             }
             return View("Index2");
         }
+        public ActionResult LichSuMuaHang(int id)
+        {
+            var lsKH = data.HoaDons.Where(t => t.MaKH == id).Distinct().OrderBy(z => z.MaHD).ToList();
+            return View(lsKH);
+        }
         public bool Sua(int id)
         {
             try

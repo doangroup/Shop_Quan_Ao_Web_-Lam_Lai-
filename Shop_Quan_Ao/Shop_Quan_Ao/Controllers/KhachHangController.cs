@@ -19,7 +19,10 @@ namespace Shop_Quan_Ao.Controllers
         }
 
 
-
+        public ActionResult DangKy()
+        {
+            return View();
+        }
         public ActionResult DangNhap()
         {
             return View();
@@ -66,8 +69,6 @@ namespace Shop_Quan_Ao.Controllers
         }
         public ActionResult KhoiTaoKhach()
         {
-
-
             KhachHang Khach = (KhachHang)Session["kh"];
 
             //ViewBag.khach = Khach;

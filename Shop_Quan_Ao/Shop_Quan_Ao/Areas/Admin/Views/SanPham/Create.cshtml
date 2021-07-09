@@ -49,12 +49,12 @@
                                 @Html.ValidationMessageFor(model => model.GhiChu)
                             </div>
                             <p>
-                                <input class="btn btn-primary btn-user btn-block" type="submit" value="Tạo Mới" />
+                                <input class="btn btn-outline-primary btn-user btn-block" type="submit" value="Tạo Mới" />
                             </p>
                         }
 
                         <div>
-                            @Html.ActionLink("Trở Về", "Index")
+                            @Html.ActionLink("Trở Về", "Index",new { @class= "btn btn-outline-primary" })
                         </div>
                     </div>
                 </div>

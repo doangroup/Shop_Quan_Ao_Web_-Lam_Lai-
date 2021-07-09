@@ -1,9 +1,9 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿
+
+@{
+    ViewBag.Title = "LichSuMuaHang";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
 }
-
-
 @model List<Shop_Quan_Ao.Models.HoaDon>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -14,32 +14,29 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Mã Hóa Đơn</th>
                         <th>Tên Khách Hàng</th>
                         <th>Số Điện Thoại</th>
                         <th>Địa Chỉ</th>
+                        <th>Mã Hóa Đơn</th>
+                        <th>Ngày Bán</th>
+                        <th>Ngày Giao</th>
                         <th>Tổng Tiền</th>
+                        <th>@Html.ActionLink("Trở Về", "Index", "KhachHang",null,new { @class= "btn btn-outline-primary" })</th>
                     </tr>
                 </thead>
                 <tfoot>
                     @foreach (var item in Model)
                     {
                         <tr class="row_@item.MaHD">
-                            <td>@item.MaHD</td>
                             <td>@item.KhachHang.TenKH</td>
                             <td>@item.KhachHang.SDT</td>
                             <td>@item.KhachHang.DiaChi</td>
+                            <td>@item.MaHD</td>
+                            <td>@item.NgayBan</td>
+                            <td>@item.NgayGiao</td>
                             <td>@string.Format("{0:0,0}", item.TongTien) NVĐ</td>
-                            <td>
-                                @Html.ActionLink("Xem Chi Tiết", "Index", "DonHang", new { id = item.MaHD }, new { @class = "nav-link btn btn-outline-primary" })
-                            </td>
-                            <td>
-                                @Html.ActionLink("Xác Nhận Đơn", "XacNhanDon", "DonHang", new { id = item.MaHD }, new { @class = "nav-link btn btn-outline-primary" })
-                            </td>
                         </tr>
-
                     }
-
                 </tfoot>
             </table>
         </div>

@@ -1,0 +1,49 @@
+﻿@model Shop_Quan_Ao.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="container__account">
+        <div class="col wide l-6">
+            <p class="container__account-heading">ĐĂNG KÝ THÀNH VIÊN MỚI</p>
+            <form action="/KhachHang/DangKy" method="post" class="container__account-sign-up-form-control">
+                <div class="row">
+                    <div class="col wide l-12">
+                        <input type="text" name="Name" required placeholder="Họ Và Tên"
+                               class="container__account-form">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col wide l-12">
+                        <input type="text" name="DiaChi" required placeholder="Địa Chỉ"
+                               class="container__account-form">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col wide l-12">
+                        <input type="text" name="Phone" required placeholder="Số Điện Thoại"
+                               class="container__account-form">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col wide l-12">
+                        <input type="password" name="Password" required placeholder="Mật Khẩu"
+                               class="container__account-form">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col wide l-12">
+                        <input type="submit" class="btn btn-sign-up" value="Đăng Ký">
+                    </div>
+                </div>
+
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

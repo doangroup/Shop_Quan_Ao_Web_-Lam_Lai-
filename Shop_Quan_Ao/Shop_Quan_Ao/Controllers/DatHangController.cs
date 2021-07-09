@@ -76,7 +76,7 @@ namespace Shop_Quan_Ao.Controllers
             if (khach == null)
             {
                 TempData["message"] = "Bạn Chưa Đăng Nhập";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("DangNhap", "KhachHang");
             }
             ViewBag.k = khach;
             GioHang gio = Session["gh"] as GioHang;
@@ -119,9 +119,6 @@ namespace Shop_Quan_Ao.Controllers
                 return RedirectToAction("XacNhanDonHang", "DatHang");
                 throw;
             }
-           
-
-            //////////
             foreach (CartItem item in gh.dsSp)
             {
                 ChiTietHD ct = new ChiTietHD();

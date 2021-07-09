@@ -5,13 +5,22 @@
             @*<i class="fas fa-laugh-wink"></i>*@
             <img src="~/Content/assets/img/logo.png" />
         </div>
-        <div class="sidebar-brand-text mx-3">Shop Quần Áo</div>
+        @*<div class="sidebar-brand-text mx-3">Shop Quần Áo</div>*@
     </a>
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider">
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Addons
+    </div>
+    <hr class="sidebar-divider">
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Addons
+    </div>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <span>@Html.ActionLink("Trang Chủ", "Index", "SanPham")</span>
+        <span>@Html.ActionLink("Trang Chủ", "Index2", "DonHang")</span>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -19,6 +28,7 @@
     <div class="sidebar-heading">
         Interface
     </div>
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <span>@Html.ActionLink("Đơn Hàng", "Index2", "DonHang")</span>
@@ -31,21 +41,25 @@
         Addons
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <span>@Html.ActionLink("Tài Khoản", "Index", "TaiKhoan")</span>
-    </li>
-    <hr class="sidebar-divider my-0">
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <span>@Html.ActionLink("Sản Phẩm", "Index", "SanPham")</span>
     </li>
-    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider">
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Addons
+    </div>
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <span>@Html.ActionLink("Khách Hàng", "Index", "KhachHang")</span>
     </li>
     <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+    <hr class="sidebar-divider">
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Addons
+    </div>
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
