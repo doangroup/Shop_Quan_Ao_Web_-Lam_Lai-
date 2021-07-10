@@ -108,7 +108,7 @@ namespace Shop_Quan_Ao.Controllers
             hd.MaKH = khach.MaKH;
             hd.NgayBan = DateTime.Now;
             hd.Tinhtrang = 0;
-            hd.NgayGiao = Convert.ToDateTime(ngaygiao);
+            hd.NgayGiao = null;
             data.HoaDons.InsertOnSubmit(hd);
             try
             {
@@ -123,7 +123,7 @@ namespace Shop_Quan_Ao.Controllers
             {
                 ChiTietHD ct = new ChiTietHD();
                 ct.MaHD = hd.MaHD;
-
+                ct.MaSP = item.iMaSP;
 
                 ct.SoLuong = item.iSoLuong;
                 ct.ThanhTien = item.ThanhTien;

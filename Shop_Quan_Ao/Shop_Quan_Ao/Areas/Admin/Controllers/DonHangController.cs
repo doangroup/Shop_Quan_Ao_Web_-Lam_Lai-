@@ -31,10 +31,31 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
                 var maTK = Sua(id);
                 if (maTK)
                 {
+                    TempData["message1"] = "Xác nhận đơn thành công";
                     return RedirectToAction("Index2", "DonHang");
                 }
                 else
                 {
+                    TempData["message2"] = "Xác nhận thất bại";
+                    ModelState.AddModelError("", "Sửa thất bại !");
+                }
+            }
+            return View("Index2");
+        }
+        public ActionResult HuyDonHang(int id)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var maTK = Xoa(id);
+                if (maTK)
+                {
+                    TempData["message3"] = "Hủy đơn thành công";
+                    return RedirectToAction("Index2", "DonHang");
+                }
+                else
+                {
+                    TempData["message4"] = "Hủy thất bại";
                     ModelState.AddModelError("", "Sửa thất bại !");
                 }
             }
@@ -51,6 +72,26 @@ namespace Shop_Quan_Ao.Areas.Admin.Controllers
             {
                 var sanPham = data.HoaDons.SingleOrDefault(t => t.MaHD== id);
                 sanPham.Tinhtrang = 1;
+                DateTime dateTime = DateTime.Now;
+                sanPham.NgayGiao = dateTime.AddDays(3);
+                data.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+        public bool Xoa(int id)
+        {
+            try
+            {
+                var ctHD = data.ChiTietHDs.SingleOrDefault(t => t.MaHD== id);
+                data.ChiTietHDs.DeleteOnSubmit(ctHD);
+                data.SubmitChanges();
+                var hd = data.HoaDons.SingleOrDefault(t => t.MaHD == id);
+                data.HoaDons.DeleteOnSubmit(hd);
                 data.SubmitChanges();
                 return true;
             }

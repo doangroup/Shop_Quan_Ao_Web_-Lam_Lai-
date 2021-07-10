@@ -24,19 +24,22 @@
                 <tfoot>
                     @foreach (var item in Model)
                     {
-                        <tr class="row_@item.MaHD">
-                            <td>@item.MaHD</td>
-                            <td>@item.KhachHang.TenKH</td>
-                            <td>@item.KhachHang.SDT</td>
-                            <td>@item.KhachHang.DiaChi</td>
-                            <td>@string.Format("{0:0,0}", item.TongTien) NVĐ</td>
-                            <td>
-                                @Html.ActionLink("Xem Chi Tiết", "Index", "DonHang", new { id = item.MaHD }, new { @class = "nav-link btn btn-outline-primary" })
-                            </td>
-                            <td>
-                                @Html.ActionLink("Xác Nhận Đơn", "XacNhanDon", "DonHang", new { id = item.MaHD }, new { @class = "nav-link btn btn-outline-primary" })
-                            </td>
-                        </tr>
+                    <tr class="row_@item.MaHD">
+                        <td>@item.MaHD</td>
+                        <td>@item.KhachHang.TenKH</td>
+                        <td>@item.KhachHang.SDT</td>
+                        <td>@item.KhachHang.DiaChi</td>
+                        <td>@string.Format("{0:0,0}", item.TongTien) NVĐ</td>
+                        <td>
+                            @Html.ActionLink("Xem Chi Tiết", "Index", "DonHang", new { id = item.MaHD }, new { @class = "nav-link btn btn-outline-primary" })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Xác Nhận Đơn", "XacNhanDon", "DonHang", new { id = item.MaHD }, new { @class = "nav-link btn btn-outline-primary" })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Hủy Đơn", "HuyDonHang", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
+                        </td>
+                    </tr>
 
                     }
 

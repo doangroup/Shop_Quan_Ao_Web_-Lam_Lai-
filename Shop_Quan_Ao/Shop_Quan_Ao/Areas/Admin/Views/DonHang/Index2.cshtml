@@ -4,7 +4,22 @@
     ViewBag.Title = "Index2";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
 }
-
+@if (TempData["message1"] != null)
+{
+    <script>alert('@TempData["message1"]');</script>
+}
+@if (TempData["message2"] != null)
+{
+    <script>alert('@TempData["message2"]');</script>
+}
+@if (TempData["message3"] != null)
+{
+    <script>alert('@TempData["message3"]');</script>
+}
+@if (TempData["message4"] != null)
+{
+    <script>alert('@TempData["message4"]');</script>
+}
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Danh Sách Đơn Hàng</h6>
@@ -24,22 +39,25 @@
                 <tfoot>
                     @foreach (var item in Model)
                     {
-                    <tr class="row_@item.MaHD">
-                        <td>@item.MaHD</td>
-                        <td>@item.KhachHang.TenKH</td>
-                        <td>@item.KhachHang.SDT</td>
-                        <td>@item.KhachHang.DiaChi</td>
-                        <td>@string.Format("{0:0,0}", item.TongTien) NVĐ</td>
-                        <td>
-                            @Html.ActionLink("Đơn Hàng Đã Mua", "LichSuMuaHang", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Xem Chi Tiết", "Index", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Xác Nhận Đơn", "XacNhanDon", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
-                        </td>
-                    </tr>
+                        <tr class="row_@item.MaHD">
+                            <td>@item.MaHD</td>
+                            <td>@item.KhachHang.TenKH</td>
+                            <td>@item.KhachHang.SDT</td>
+                            <td>@item.KhachHang.DiaChi</td>
+                            <td>@string.Format("{0:0,0}", item.TongTien) NVĐ</td>
+                            <td>
+                                @Html.ActionLink("Đơn Hàng Đã Mua", "LichSuMuaHang", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Xem Chi Tiết", "Index", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Xác Nhận Đơn", "XacNhanDon", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Hủy Đơn", "HuyDonHang", "DonHang", new { id = item.MaHD }, new { @class = "nav-link" })
+                            </td>
+                        </tr>
 
                     }
 
