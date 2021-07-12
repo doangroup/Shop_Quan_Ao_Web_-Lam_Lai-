@@ -717,3 +717,13 @@ text-align: left;
 }
 
 
+.btn-sign-up--final {
+    border: 1px solid #ccc;
+    width: 268px;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 300;
+    transform: translateX(5px);
+    margin-top: 8px;
+    margin-left: 10px;
+}
