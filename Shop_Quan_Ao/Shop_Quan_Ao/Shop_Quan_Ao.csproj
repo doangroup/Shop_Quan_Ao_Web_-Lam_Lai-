@@ -4265,11 +4265,6 @@
     <Content Include="Asset\vendor\jquery\jquery.min.map" />
     <Content Include="Asset\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\Admin\Views\DangNhap\Index.cshtml" />
-    <Content Include="Models\DataClasses1.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Areas\Admin\Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\MenuAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
@@ -4281,6 +4276,11 @@
     <Content Include="Areas\Admin\Views\DonHang\Index2.cshtml" />
     <Content Include="Areas\Admin\Views\DonHang\LichSuMuaHang.cshtml" />
     <Content Include="Areas\Admin\Views\KhachHang\Index.cshtml" />
+    <Content Include="Models\DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Models\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
